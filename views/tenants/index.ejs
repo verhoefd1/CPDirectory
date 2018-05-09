@@ -1,0 +1,6 @@
+<%include ../partials/header.ejs%>
+<h1>Index Page</h1>
+<%tenants.forEach(function(tenant){%>
+	<h3> <%= tenant.name %> </h3>
+	<%});%>
+<%include ../partials/footer.ejs%>
