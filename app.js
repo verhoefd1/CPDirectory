@@ -7,10 +7,10 @@ flash               = require("connect-flash"),
 passport            = require("passport"),
 LocalStrategy       = require("passport-local"),
 // create tenant model
-// Tenant             	= require("./models/tenant"),
+Tenant             	= require("./models/tenants"),
 //Create user model
-// User                = require("./models/user"),
-// seedDB              = require("./seeds"),
+User                = require("./models/users"),
+seedDB              = require("./seeds"),
 port                = 3000;
 
 
@@ -22,7 +22,7 @@ port                = 3000;
 //     indexRoutes     = require("./routes/index");
 
 //seedDB is commented out so that it doesn't generate data for us since we have real working data running on the site. 
-// seedDB();
+seedDB();
 // This does something to add all the directories into a the express system so that oyu don't have to explicitly say which folder it is in. I think 
 app.use(express.static(__dirname + "/public"));
 //Method over ride allows us to use server commands that don't work in the current http environmnet. 
@@ -59,8 +59,86 @@ app.set("view engine", "ejs");
 // });
 
 app.get("/", function(req, res){
-	res.send("Hello world!");
+	Tenant.find({}).sort('name').exec(function(err, allTenants){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("tenants/index", {tenants: allTenants, currentUser: req.user, page: 'tenants'});
+        }
+    });
 });
+
+//Tenant Index area for admins add in middleware
+app.get("/tenants", function(req, res){
+	Tenant.find({}).sort('name').exec(function(err, allTenants){
+		if(err){
+			console.log(err);
+		} else {
+			res.render("tenants/adminindex", {tenants: allTenants, currentUser: req.user, page: 'admintenants'});
+		}
+	});
+});
+
+//New Tenants
+app.get("/tenants/new", function(req, res){
+	res.send("New tenant form");
+});
+
+//Create Tenants
+app.post("/tenants", function(req, res){
+	// var letter = req.body.letter, 
+	// name = req.body.name,
+	// suite = req.body.suite,
+	// subname1 = req.body.subname1,
+	// subname2 = req.body.subname2,
+	// subname3 = req.body.subname3,
+	// subname4 = req.body.subname4,
+	// subname5 = req.body.subname5,
+	// subname6 = req.body.subname6,
+});
+//Show Tenants
+app.get("/tenants/:tenand_id", function(req, res){
+	Tenant.findById(req.params.tenant_id).exec(function(err, foundTenant){
+		if(err){
+			console.log(err);
+		} else {
+			console.log(foundTenant);
+			res.render("tenants/show", {tenant: foundTenant});
+		}
+	});
+});
+//Edit Tenants
+app.get("/tenants/:tenant_id/edit", function(req, res){
+	Tenant.findById(req.params.tenant_id, function(err, foundTenant){
+		if(err){
+			console.log(err);
+		} else {
+			console.log(foundTenant);
+			res.render("tenants/edit", {tenant: foundTenant});
+		}
+	});
+});
+//Update Tenants
+app.put("/tenants/:tenant_id", function(req, res){
+	Tenant.findByIdAndUpdate(req.params.tenant_id, req.body.tenant, function(err){
+		if(err){
+			console.log(err);
+		} else {
+			res.redirect("/tenants/" + req.params.tenant_id);
+		}
+	});
+});
+//Delete Tenants
+app.delete("/tenants/:tenant_id", function(req, res){
+	Tenant.findByIdAndRemove(req.params.tenant_id, function(err){
+		if(err){
+			console.log(err);
+		} else {
+			res.redirect("/tenants");
+		}
+	});
+});
+
 //Sets up the actual routes for each of the index pages. 
 // app.use(indexRoutes);
 // app.use("/campgrounds", camproundRoutes);
