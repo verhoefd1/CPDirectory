@@ -3,7 +3,7 @@
         <h1 style="text-align: center;">Add a new Tenant</h1>
         <div style="width: 30%; margin:45px auto;">
             <!--sets form up to send a post back through the server under /campgrounds-->
-            <form action="/tenants<%=tenant._id%>?_method=PUT" method="POST">
+            <form action="/tenants/<%=tenant._id%>?_method=PUT" method="POST">
                 <div class="form-group">
                     <input class="form-control" type="text"  name="tenant[name]" value="<%=tenant.name%>">
                 </div>
