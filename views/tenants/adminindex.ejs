@@ -1,6 +1,12 @@
 <%include ../partials/header.ejs%>
 <h1>Admin Index Page</h1>
 <%tenants.forEach(function(tenant){%>
-	<h3> <%= tenant.name %> </h3>
+	<a href="/tenants/<%=tenant._id%>"><h2> <%= tenant.name %> </h2></a>
+	<h3><%=tenant.subname1%></h3>
+	<h3><%=tenant.subname2%></h3>
+	<h3><%=tenant.subname3%></h3>
+	<h3><%=tenant.subname4%></h3>
+	<h3><%=tenant.subname5%></h3>
+	<h3><%=tenant.subname6%></h3>
 	<%});%>
 <%include ../partials/footer.ejs%>

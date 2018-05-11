@@ -22,7 +22,7 @@ port                = 3000;
 //     indexRoutes     = require("./routes/index");
 
 //seedDB is commented out so that it doesn't generate data for us since we have real working data running on the site. 
-seedDB();
+// seedDB();
 // This does something to add all the directories into a the express system so that oyu don't have to explicitly say which folder it is in. I think 
 app.use(express.static(__dirname + "/public"));
 //Method over ride allows us to use server commands that don't work in the current http environmnet. 
@@ -63,7 +63,7 @@ app.get("/", function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("tenants/index", {tenants: allTenants, currentUser: req.user, page: 'tenants'});
+            res.render("tenants/index", {tenants: allTenants, currentUser: req.user});
         }
     });
 });
@@ -74,7 +74,7 @@ app.get("/tenants", function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			res.render("tenants/adminindex", {tenants: allTenants, currentUser: req.user, page: 'admintenants'});
+			res.render("tenants/adminindex", {tenants: allTenants, currentUser: req.user});
 		}
 	});
 });
@@ -86,18 +86,29 @@ app.get("/tenants/new", function(req, res){
 
 //Create Tenants
 app.post("/tenants", function(req, res){
-	// var letter = req.body.letter, 
-	// name = req.body.name,
-	// suite = req.body.suite,
-	// subname1 = req.body.subname1,
-	// subname2 = req.body.subname2,
-	// subname3 = req.body.subname3,
-	// subname4 = req.body.subname4,
-	// subname5 = req.body.subname5,
-	// subname6 = req.body.subname6,
+	var name 		= req.body.name;
+	var suite 		= req.body.suite;
+	var column 		= req.body.column;
+	var subname1 	= req.body.subname1;
+	var subname2 	= req.body.subname2;
+	var subname3 	= req.body.subname3;
+	var subname4 	= req.body.subname4;
+	var subname5 	= req.body.subname5;
+	var subname6 	= req.body.subname6;
+	var newTenant 	= {name:name, suite:suite, column:column, subname1:subname1,
+		subname2:subname2, subname3:subname3, subname4:subname4, subname5:subname5, subname6:subname6};
+	//New tenant logic to add into database	
+	Tenant.create(newTenant, function(err, newlyCreated){
+		if(err){
+			console.log(err);
+		} else {
+			console.log(newlyCreated);
+			res.redirect("/tenants");
+		}
+	});
 });
 //Show Tenants
-app.get("/tenants/:tenand_id", function(req, res){
+app.get("/tenants/:tenant_id", function(req, res){
 	Tenant.findById(req.params.tenant_id).exec(function(err, foundTenant){
 		if(err){
 			console.log(err);

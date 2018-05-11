@@ -1,0 +1,35 @@
+<%include ../partials/header%>
+	<div>
+        <h1 style="text-align: center;">Add a new Tenant</h1>
+        <div style="width: 30%; margin:45px auto;">
+            <!--sets form up to send a post back through the server under /campgrounds-->
+            <form action="/tenants<%=tenant._id%>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text"  name="tenant[name]" value="<%=tenant.name%>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="tenant[suite]" value="<%=tenant.suite%>">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" type="number" name="tenant[column]" value="<%=tenant.column%>">
+                    	<option value="1">Column 1</option>
+                    	<option value="2">Column 2</option>
+                    	<option value="3">Column 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="tenant[subname1]" value="<%=tenant.subname1%>">
+                    <input class="form-control" type="text" name="tenant[subname2]" value="<%=tenant.subname2%>">
+                    <input class="form-control" type="text" name="tenant[subname3]" value="<%=tenant.subname3%>">
+                    <input class="form-control" type="text" name="tenant[subname4]" value="<%=tenant.subname4%>">
+                    <input class="form-control" type="text" name="tenant[subname5]" value="<%=tenant.subname5%>">
+                    <input class="form-control" type="text" name="tenant[subname6]" value="<%=tenant.subname6%>">
+                </div> 
+                <button type="Submit" class="btn btn-primary">Submit</button>  
+                <div class="form-group">
+                    <a href ="/tenants">Go Back</a>
+                </div>        
+            </form>
+        </div>
+    </div>
+<%include ../partials/footer%>
