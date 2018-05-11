@@ -2,9 +2,10 @@ var mongoose = require("mongoose");
 
 //schema setup
 var tenantSchema = new mongoose.Schema({
-    letter: String,
+    // letter: String,
     name: String,
     suite: Number,
+    column: Number,
     subname1: String,
     subname2: String,
     subname3: String,

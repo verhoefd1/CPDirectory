@@ -81,7 +81,7 @@ app.get("/tenants", function(req, res){
 
 //New Tenants
 app.get("/tenants/new", function(req, res){
-	res.send("New tenant form");
+	res.render("tenants/new");
 });
 
 //Create Tenants
