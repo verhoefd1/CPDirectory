@@ -1,12 +1,133 @@
 <%include ../partials/header.ejs%>
-<h1>Admin Index Page</h1>
-<%tenants.forEach(function(tenant){%>
-	<a href="/tenants/<%=tenant._id%>"><h2> <%= tenant.name %> </h2></a>
-	<h3><%=tenant.subname1%></h3>
-	<h3><%=tenant.subname2%></h3>
-	<h3><%=tenant.subname3%></h3>
-	<h3><%=tenant.subname4%></h3>
-	<h3><%=tenant.subname5%></h3>
-	<h3><%=tenant.subname6%></h3>
-	<%});%>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-4">
+			<%var i;%>
+			<%tenants.forEach(function(tenant){%>
+				<%var n = tenant.name;%>
+				<%var c = tenant.column%>
+				<%if(c == 1){%>
+					<%if(n.charAt(0) == i){%>
+							<h2><%=tenant.name%>
+								<span><%=tenant.suite%></span>  <a href="/tenants/<%=tenant._id%>"><button class="btn btn-primary">Info</button></a>
+							</h2>
+							<h3><%=tenant.subname1%></h3>
+							<h3><%=tenant.subname2%></h3>
+							<h3><%=tenant.subname3%></h3>
+							<h3><%=tenant.subname4%></h3>
+							<h3><%=tenant.subname5%></h3>
+							<h3><%=tenant.subname6%></h3>
+							<h3><%=tenant.subname7%></h3>
+							<h3><%=tenant.subname8%></h3>
+							<h3><%=tenant.subname9%></h3>
+							<h3><%=tenant.subname10%></h3>
+							<hr>
+						<%} else {%>
+							<%i = n.charAt(0);%>
+							<h1><%=i%></h1>
+							<hr>
+							<h2><%=tenant.name%>
+								<span><%=tenant.suite%></span>  <a href="/tenants/<%=tenant._id%>"><button class="btn btn-primary">Info</button></a>
+							</h2>
+							<h3><%=tenant.subname1%></h3>
+							<h3><%=tenant.subname2%></h3>
+							<h3><%=tenant.subname3%></h3>
+							<h3><%=tenant.subname4%></h3>
+							<h3><%=tenant.subname5%></h3>
+							<h3><%=tenant.subname6%></h3>
+							<h3><%=tenant.subname7%></h3>
+							<h3><%=tenant.subname8%></h3>
+							<h3><%=tenant.subname9%></h3>
+							<h3><%=tenant.subname10%></h3>
+							<hr>
+							<%}%>
+					<%}%>
+			<%});%>
+		</div>
+		<div class="col-lg-4">
+			
+			<%var i;%>
+			<%tenants.forEach(function(tenant){%>
+				<%var n = tenant.name;%>
+				<%var c = tenant.column%>
+				<%if(c == 2){%>
+					<%if(n.charAt(0) == i){%>
+							<h2><%=tenant.name%>
+								<span><%=tenant.suite%></span>  <a href="/tenants/<%=tenant._id%>"><button class="btn btn-primary">Info</button></a>
+							</h2>
+							<h3><%=tenant.subname1%></h3>
+							<h3><%=tenant.subname2%></h3>
+							<h3><%=tenant.subname3%></h3>
+							<h3><%=tenant.subname4%></h3>
+							<h3><%=tenant.subname5%></h3>
+							<h3><%=tenant.subname6%></h3>
+							<h3><%=tenant.subname7%></h3>
+							<h3><%=tenant.subname8%></h3>
+							<h3><%=tenant.subname9%></h3>
+							<h3><%=tenant.subname10%></h3>
+							<hr>
+						<%} else {%>
+							<%i = n.charAt(0);%>
+							<h1><%=i%></h1>
+							<hr>
+							<h2><%=tenant.name%>
+								<span><%=tenant.suite%></span>  <a href="/tenants/<%=tenant._id%>"><button class="btn btn-primary">Info</button></a>
+							</h2>
+							<h3><%=tenant.subname1%></h3>
+							<h3><%=tenant.subname2%></h3>
+							<h3><%=tenant.subname3%></h3>
+							<h3><%=tenant.subname4%></h3>
+							<h3><%=tenant.subname5%></h3>
+							<h3><%=tenant.subname6%></h3>
+							<h3><%=tenant.subname7%></h3>
+							<h3><%=tenant.subname8%></h3>
+							<h3><%=tenant.subname9%></h3>
+							<h3><%=tenant.subname10%></h3>
+							<hr>
+							<%}%>
+					<%}%>
+			<%});%>
+		</div>
+		<div class="col-lg-4">
+			<%tenants.forEach(function(tenant){%>
+				<%var n = tenant.name;%>
+				<%var c = tenant.column%>
+				<%if(c == 3){%>
+					<%if(n.charAt(0) == i){%>
+							<h2><%=tenant.name%>
+								<span><%=tenant.suite%></span>  <a href="/tenants/<%=tenant._id%>"><button class="btn btn-primary">Info</button></a>
+							</h2>
+							<h3><%=tenant.subname1%></h3>
+							<h3><%=tenant.subname2%></h3>
+							<h3><%=tenant.subname3%></h3>
+							<h3><%=tenant.subname4%></h3>
+							<h3><%=tenant.subname5%></h3>
+							<h3><%=tenant.subname6%></h3>
+							<h3><%=tenant.subname7%></h3>
+							<h3><%=tenant.subname8%></h3>
+							<h3><%=tenant.subname9%></h3>
+							<h3><%=tenant.subname10%></h3>
+							<hr>
+						<%} else {%>
+							<%i = n.charAt(0);%>
+							<h1><%=i%></h1>
+							<hr>
+							<h2><%=tenant.name%>
+								<span><%=tenant.suite%></span>  <a href="/tenants/<%=tenant._id%>"><button class="btn btn-primary">Info</button></a>
+							</h2>
+							<h3><%=tenant.subname1%></h3>
+							<h3><%=tenant.subname2%></h3>
+							<h3><%=tenant.subname3%></h3>
+							<h3><%=tenant.subname4%></h3>
+							<h3><%=tenant.subname5%></h3>
+							<h3><%=tenant.subname6%></h3>
+							<h3><%=tenant.subname7%></h3>
+							<h3><%=tenant.subname8%></h3>
+							<h3><%=tenant.subname9%></h3>
+							<h3><%=tenant.subname10%></h3>
+							<hr>
+							<%}%>
+					<%}%>
+			<%});%>
+		</div>
 <%include ../partials/footer.ejs%>

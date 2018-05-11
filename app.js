@@ -63,7 +63,7 @@ app.get("/", function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("tenants/index", {tenants: allTenants, currentUser: req.user});
+            res.render("tenants/index", {tenants: allTenants, currentUser: req.user, page: 'display'});
         }
     });
 });
@@ -74,14 +74,14 @@ app.get("/tenants", function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-			res.render("tenants/adminindex", {tenants: allTenants, currentUser: req.user});
+			res.render("tenants/adminindex", {tenants: allTenants, currentUser: req.user, page: 'adminindex'});
 		}
 	});
 });
 
 //New Tenants
 app.get("/tenants/new", function(req, res){
-	res.render("tenants/new");
+	res.render("tenants/new", {page: 'new'});
 });
 
 //Create Tenants
@@ -95,8 +95,13 @@ app.post("/tenants", function(req, res){
 	var subname4 	= req.body.subname4;
 	var subname5 	= req.body.subname5;
 	var subname6 	= req.body.subname6;
+	var subname7 	= req.body.subname7;
+	var subname8 	= req.body.subname8;
+	var subname9 	= req.body.subname9;
+	var subname10 	= req.body.subname10;
 	var newTenant 	= {name:name, suite:suite, column:column, subname1:subname1,
-		subname2:subname2, subname3:subname3, subname4:subname4, subname5:subname5, subname6:subname6};
+		subname2:subname2, subname3:subname3, subname4:subname4, subname5:subname5, subname6:subname6,
+		subname7:subname7, subname8:subname8, subname9:subname9, subname10:subname10};
 	//New tenant logic to add into database	
 	Tenant.create(newTenant, function(err, newlyCreated){
 		if(err){
@@ -114,7 +119,7 @@ app.get("/tenants/:tenant_id", function(req, res){
 			console.log(err);
 		} else {
 			console.log(foundTenant);
-			res.render("tenants/show", {tenant: foundTenant});
+			res.render("tenants/show", {tenant: foundTenant, page: 'show'});
 		}
 	});
 });
@@ -125,7 +130,7 @@ app.get("/tenants/:tenant_id/edit", function(req, res){
 			console.log(err);
 		} else {
 			console.log(foundTenant);
-			res.render("tenants/edit", {tenant: foundTenant});
+			res.render("tenants/edit", {tenant: foundTenant, page: 'edit'});
 		}
 	});
 });

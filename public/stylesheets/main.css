@@ -17,7 +17,7 @@ body {
 }
 .logo {
     max-height: 160px;
-    right: 240px;
+    right: 95px;
     position: relative;
     top: 35px;
     padding-right: 0px;
@@ -26,16 +26,31 @@ body {
 .VOP {
 	font-family: Georgia;
     color: white;
-    font-size: 3.5em;
-    position: absolute;
-    right: 9%;
-    top: 1%;
+    font-size: 3.0em;
+    position: relative;
+    left: 75px;
+    bottom: 140px;
 }
 
 .CP {
 	font-family: Georgia;
     color: white;
-    font-size: 3em;
+    font-size: 2.5em;
     position: relative;
-    bottom: 65px;
+    bottom: 200px;
+    left: 140px;
+}
+.tenant{
+    font-family: Arial, Helvetica;
+    font-size: 1.50em;
+    margin-bottom: 10px;
+
+}
+.subname{
+    font-family: Arial, Helvetica;
+    font-size: 1.0em;
+    text-indent: 25px;
+}
+.suite{
+    float: right;
 }

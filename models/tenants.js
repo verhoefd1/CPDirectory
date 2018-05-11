@@ -12,6 +12,10 @@ var tenantSchema = new mongoose.Schema({
     subname4: String,
     subname5: String,
     subname6: String,
+    subname7: String,
+    subname8: String,
+    subname9: String,
+    subname10: String,
 });
 
 //converts Schema to a model. 
