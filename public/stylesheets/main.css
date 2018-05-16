@@ -3,6 +3,7 @@ body {
 }
 
 
+
 #title {
     margin: 30px;
     position: absolute;
@@ -11,6 +12,51 @@ body {
     font-family: "Arial";
     color:  rgb(17,30,108);
 }
+/*Main Body*/
+.gutter {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 80px;
+}
+
+.letter {
+    margin-top: 25px;
+    color: rgb(17,30,108);
+}
+
+.tenant{
+    font-family: Arial, Helvetica;
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+
+.subname{
+    font-family: Arial, Helvetica;
+    font-size: 1.0em;
+    text-indent: 25px;
+}
+
+.suite{
+    float: right;
+}
+
+/*Menu Area*/
+.logo {
+    height: 300px;
+    margin: 35px auto;
+
+}
+.dirMenu {
+    min-height: 100vh;
+    background-color: rgb(17,30,108);
+    text-align: center;
+}
+
+.menuRow {
+    text-align: center;
+    align-content: center;
+}
+
 .menuTitle {
     color: White;
     font-family: "Arial";
@@ -18,32 +64,12 @@ body {
     font-size: 3.5em;
     margin-top: 60px;
 }
-.gutter {
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-top: 80px;
-}
-
-.dirMenu {
-	min-height: 100vh;
-	background-color: rgb(17,30,108);
-	text-align: center;
-}
 
 .menuItem {
 	text-align: center;
 	padding-left: 25%;
 	margin-top: 2%;
 	margin-bottom: 2%;
-}
-.menuRow {
-    text-align: center;
-    align-content: center;
-}
-
-.menuHR {
-    background-color: white;
-
 }
 
 i {
@@ -56,50 +82,12 @@ i p {
     font-size: .35em;
     margin-top: 35px;
 }
-
-
-.logo {
-    height: 300px;
-    margin: 35px auto;
-
-}
-
-.VOP {
-	font-family: Georgia;
-    color: white;
-    font-size: 3.0em;
-    position: relative;
-    left: 75px;
-    bottom: 130px;
-}
-
-.CP {
-	font-family: Georgia;
-    color: white;
-    font-size: 2.5em;
-    position: relative;
-    bottom: 200px;
-    left: 140px;
-}
-.letter {
-    margin-top: 25px;
-    color: rgb(17,30,108);
-}
-.tenant{
-    font-family: Arial, Helvetica;
-    font-size: 1.25em;
-    margin-bottom: 10px;
-}
-.subname{
-    font-family: Arial, Helvetica;
-    font-size: 1.0em;
-    text-indent: 25px;
-}
-.suite{
-    float: right;
-}
 .time {
     position: absolute;
     left: 100px;
     bottom: 30px;
 }
+
+
+
+

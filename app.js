@@ -6,31 +6,21 @@ methodOverride      = require("method-override"),
 // flash               = require("connect-flash"),
 // passport            = require("passport"),
 // LocalStrategy       = require("passport-local"),
-// create tenant model
 Tenant             	= require("./models/tenants"),
-//Create user model
 // User                = require("./models/users"),
 seedDB              = require("./seeds"),
 request				= require("request"),
-// weather				= requre("./weather"),
 port                = 3000;
 
 
-//require routes
 //These are the routes under routes folder. This is so that we can separate our routes for each portion into separate files so that  app.js isn't humungous.
 
 var tenantRoutes = require("./routes/tenants");
-// var commentRoutes   = require("./routes/comments"),
-//     camproundRoutes = require("./routes/campgrounds"),
-//     indexRoutes     = require("./routes/index");
-
-//seedDB is commented out so that it doesn't generate data for us since we have real working data running on the site. 
 // seedDB();
 // This does something to add all the directories into a the express system so that oyu don't have to explicitly say which folder it is in. I think 
 app.use(express.static(__dirname + "/public"));
 //Method over ride allows us to use server commands that don't work in the current http environmnet. 
 app.use(methodOverride("_method"));
-// mongoose.Promise = global.Promise;
 //connects to database
 mongoose.connect("mongodb://localhost/directory");
 //sets up parsing to read req.body
@@ -62,11 +52,9 @@ app.set("view engine", "ejs");
 // });
 
 //Sets up the actual routes for each of the index pages. 
-// app.use(indexRoutes);
 app.use("/", tenantRoutes);
 
 //sets up server to start with app.
-
 app.listen(port, function(){
    console.log("Directory Server Started"); 
 });

@@ -1,16 +1,12 @@
 var 
 express         = require("express"),
 router          = express.Router(),
-Tenant 			= require("../models/tenants");
+Tenant 			= require("../models/tenants"),
 request			= require("request");
 // User 			= require("../models/users");
 
-// console.log("hello world! this is from the tenant.js route");
-// router.get("/", function(req, res){
-// 	res.send("hello world 2!");
-// });
 router.get("/", function(req, res){ 
-	var url = "http://api.openweathermap.org/data/2.5/weather?q=West+Des+Moines&units=imperial&appid=8deb9186ad62ba1d2113ab0ba186c3a1"
+	var url = "http://api.openweathermap.org/data/2.5/weather?q=West+Des+Moines&units=imperial&appid=8deb9186ad62ba1d2113ab0ba186c3a1";
 	request(url, function(error, response, body){
 		if(!error && response.statusCode === 200){
 			var weatherData = JSON.parse(body);
