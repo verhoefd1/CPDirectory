@@ -10,7 +10,7 @@ Tenant             	= require("./models/tenants"),
 // User                = require("./models/users"),
 seedDB              = require("./seeds"),
 request				= require("request"),
-port                = 3000;
+port                = 8080;
 
 
 //These are the routes under routes folder. This is so that we can separate our routes for each portion into separate files so that  app.js isn't humungous.
@@ -56,5 +56,5 @@ app.use("/", tenantRoutes);
 
 //sets up server to start with app.
 app.listen(port, function(){
-   console.log("Directory Server Started");
+   console.log("Directory Server Started listing on" + port);
 });
