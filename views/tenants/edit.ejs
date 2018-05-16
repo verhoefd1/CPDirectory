@@ -1,6 +1,6 @@
 <%include ../partials/header%>
 	<div>
-        <h1 style="text-align: center;">Add a new Tenant</h1>
+        <h1 style="text-align: center;">Edit <%=tenant.name%></h1>
         <div style="width: 30%; margin:45px auto;">
             <!--sets form up to send a post back through the server under /campgrounds-->
             <form action="/tenants/<%=tenant._id%>?_method=PUT" method="POST">
@@ -12,28 +12,28 @@
                 </div>
                 <div class="form-group">
                     <select class="form-control" type="number" name="tenant[column]" value="<%=tenant.column%>">
-                    	<option value="1">Column 1</option>
-                    	<option value="2">Column 2</option>
-                    	<option value="3">Column 3</option>
+                    	<option value="1" <%if(tenant.column == 1){%>selected<%};%>>Column 1</option>
+                    	<option value="2" <%if(tenant.column == 2){%>selected<%};%>>Column 2</option>
+                    	<option value="3" <%if(tenant.column == 3){%>selected<%};%>>Column 3</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="tenant[subname1]" value="<%=tenant.subname1%>">
-                    <input class="form-control" type="text" name="tenant[subname2]" value="<%=tenant.subname2%>">
-                    <input class="form-control" type="text" name="tenant[subname3]" value="<%=tenant.subname3%>">
-                    <input class="form-control" type="text" name="tenant[subname4]" value="<%=tenant.subname4%>">
-                    <input class="form-control" type="text" name="tenant[subname5]" value="<%=tenant.subname5%>">
-                    <input class="form-control" type="text" name="tenant[subname6]" value="<%=tenant.subname6%>">
-                    <input class="form-control" type="text" name="tenant[subname7]" value="<%=tenant.subname7%>">
-                    <input class="form-control" type="text" name="tenant[subname8]" value="<%=tenant.subname8%>">
-                    <input class="form-control" type="text" name="tenant[subname9]" value="<%=tenant.subname9%>">
-                    <input class="form-control" type="text" name="tenant[subname10]" value="<%=tenant.subname10%>">
+                    <input class="form-control editsub" type="text" name="tenant[subname1]" value="<%=tenant.subname1%>" placeholder="Empty">
+                    <input class="form-control editsub" type="text" name="tenant[subname2]" value="<%=tenant.subname2%>" placeholder="Empty">
+                    <input class="form-control editsub" type="text" name="tenant[subname3]" value="<%=tenant.subname3%>" placeholder="Empty">
+                    <input class="form-control editsub" type="text" name="tenant[subname4]" value="<%=tenant.subname4%>" placeholder="Empty">
+                    <input class="form-control editsub" type="text" name="tenant[subname5]" value="<%=tenant.subname5%>" placeholder="Empty">
+                    <input class="form-control editsub" type="text" name="tenant[subname6]" value="<%=tenant.subname6%>" placeholder="Empty">
+                    <input class="form-control editsub" type="text" name="tenant[subname7]" value="<%=tenant.subname7%>" placeholder="Empty">
+                    <input class="form-control editsub" type="text" name="tenant[subname8]" value="<%=tenant.subname8%>" placeholder="Empty">
+                    <input class="form-control editsub" type="text" name="tenant[subname9]" value="<%=tenant.subname9%>" placeholder="Empty">
+                    <input class="form-control editsub" type="text" name="tenant[subname10]" value="<%=tenant.subname10%>" placeholder="Empty">
                 </div> 
                 <button type="Submit" class="btn btn-primary">Submit</button>  
-                <div class="form-group">
-                    <a href ="/tenants">Go Back</a>
-                </div>        
+                <button type="Reset" class="btn btn-warning">Reset</button>       
             </form>
+            <br>
+            <a href ="/tenants">Back</a>
         </div>
     </div>
 <%include ../partials/footer%>

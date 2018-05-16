@@ -2,6 +2,27 @@ body {
 	max-height: 98vh;
 }
 
+
+#title {
+    margin: 20px;
+    position: absolute;
+    left: 500px;
+    font-size: 2.5em;
+    font-family: "Arial";
+}
+.menuTitle {
+    color: White;
+    font-family: "Arial";
+    margin: auto;
+    font-size: 3.5em;
+    margin-top: 10px;
+}
+.gutter {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 80px;
+}
+
 .dirMenu {
 	min-height: 100vh;
 	background-color: rgb(17,30,108);
@@ -10,17 +31,36 @@ body {
 
 .menuItem {
 	text-align: center;
-	display: block;
 	padding-left: 25%;
 	margin-top: 2%;
 	margin-bottom: 2%;
 }
+.menuRow {
+    text-align: center;
+    align-content: center;
+}
+
+.menuHR {
+    color: white;
+
+}
+
+i {
+    font-size: 250px;
+    color: White;
+    margin: 45px auto;
+}
+
+i p {
+    font-size: .5em;
+    margin-top: 35px;
+}
+
+
 .logo {
-    max-height: 160px;
-    right: 95px;
-    position: relative;
-    top: 35px;
-    padding-right: 0px;
+    height: 300px;
+    margin: 25px auto;
+
 }
 
 .VOP {
@@ -40,11 +80,13 @@ body {
     bottom: 200px;
     left: 140px;
 }
+.letter {
+    margin-top: 25px;
+}
 .tenant{
     font-family: Arial, Helvetica;
-    font-size: 1.50em;
+    font-size: 1.25em;
     margin-bottom: 10px;
-
 }
 .subname{
     font-family: Arial, Helvetica;
@@ -53,4 +95,9 @@ body {
 }
 .suite{
     float: right;
+}
+.time {
+    position: absolute;
+    left: 100px;
+    bottom: 10px;
 }

@@ -11,6 +11,8 @@ Tenant             	= require("./models/tenants"),
 //Create user model
 User                = require("./models/users"),
 seedDB              = require("./seeds"),
+request				= require("request"),
+// weather				= requre("./weather"),
 port                = 3000;
 
 
@@ -38,34 +40,41 @@ app.set("view engine", "ejs");
 // app.use(flash());
 
 //passport Configuration
-// app.use(require("express-session")({
-//     secret: "What is life's ultimate deception?",
-//     resave: false,
-//     saveUnitialized: false
-// }));
+app.use(require("express-session")({
+    secret: "What is life's greatest illusion?",
+    resave: false,
+    saveUnitialized: false
+}));
 
-// app.use(passport.initialize());
-// app.use(passport.session());
-// passport.use(new LocalStrategy(User.authenticate()));
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 //Passes user and message to all views
-// app.use(function(req, res, next){
-//     res.locals.currentUser = req.user;
-//     res.locals.error = req.flash("error");
-//     res.locals.success = req.flash("success");
-//     next();
-// });
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    // res.locals.error = req.flash("error");
+    // res.locals.success = req.flash("success");
+    next();
+});
 
-app.get("/", function(req, res){
-	Tenant.find({}).sort('name').exec(function(err, allTenants){
-        if(err){
-            console.log(err);
-        } else {
-            res.render("tenants/index", {tenants: allTenants, currentUser: req.user, page: 'display'});
-        }
-    });
+app.get("/", function(req, res){ 
+	var url = "http://api.openweathermap.org/data/2.5/weather?q=West+Des+Moines&units=imperial&appid=8deb9186ad62ba1d2113ab0ba186c3a1"
+	request(url, function(error, response, body){
+		if(!error && response.statusCode === 200){
+			var weatherData = JSON.parse(body);
+			console.log(weatherData.weather[0].id);
+			Tenant.find({}).sort('name').exec(function(err, allTenants){
+        		if(err){
+            	console.log(err);
+        	} else {
+            	res.render("tenants/index", {tenants: allTenants, currentUser: req.user, page: 'display', weather: weatherData});
+        	}
+    		});
+		}
+	});
 });
 
 //Tenant Index area for admins add in middleware
