@@ -4,18 +4,19 @@ body {
 
 
 #title {
-    margin: 20px;
+    margin: 30px;
     position: absolute;
     left: 500px;
     font-size: 2.5em;
     font-family: "Arial";
+    color:  rgb(17,30,108);
 }
 .menuTitle {
     color: White;
     font-family: "Arial";
     margin: auto;
     font-size: 3.5em;
-    margin-top: 10px;
+    margin-top: 60px;
 }
 .gutter {
     padding-left: 30px;
@@ -46,9 +47,9 @@ body {
 }
 
 i {
-    font-size: 250px;
+    font-size: 225px;
     color: White;
-    margin: 45px auto;
+    margin: 100px auto;
 }
 
 i p {
@@ -59,7 +60,7 @@ i p {
 
 .logo {
     height: 300px;
-    margin: 25px auto;
+    margin: 35px auto;
 
 }
 
@@ -69,7 +70,7 @@ i p {
     font-size: 3.0em;
     position: relative;
     left: 75px;
-    bottom: 140px;
+    bottom: 130px;
 }
 
 .CP {
@@ -82,6 +83,7 @@ i p {
 }
 .letter {
     margin-top: 25px;
+    color: rgb(17,30,108);
 }
 .tenant{
     font-family: Arial, Helvetica;
@@ -99,5 +101,5 @@ i p {
 .time {
     position: absolute;
     left: 100px;
-    bottom: 10px;
+    bottom: 30px;
 }
