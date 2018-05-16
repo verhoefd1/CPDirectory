@@ -56,5 +56,5 @@ app.use("/", tenantRoutes);
 
 //sets up server to start with app.
 app.listen(port, function(){
-   console.log("Directory Server Started"); 
+   console.log("Directory Server Started");
 });
