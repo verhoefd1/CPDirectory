@@ -10,7 +10,7 @@ router.get("/", function(req, res){
 	request(url, function(error, response, body){
 		if(!error && response.statusCode === 200){
 			var weatherData = JSON.parse(body);
-			console.log(weatherData.weather[0].id);
+			// console.log(weatherData.weather[0].id);
 			Tenant.find({}).sort('name').exec(function(err, allTenants){
         		if(err){
             	console.log(err);
