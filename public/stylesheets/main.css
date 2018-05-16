@@ -41,7 +41,7 @@ body {
 }
 
 .menuHR {
-    color: white;
+    background-color: white;
 
 }
 
@@ -52,7 +52,7 @@ i {
 }
 
 i p {
-    font-size: .5em;
+    font-size: .35em;
     margin-top: 35px;
 }
 
