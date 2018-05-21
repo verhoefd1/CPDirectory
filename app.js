@@ -25,6 +25,8 @@ app.use(methodOverride("_method"));
 mongoose.connect("mongodb://localhost/directory");
 //sets up parsing to read req.body
 app.use(bodyParser.urlencoded({extended: true}));
+//sets up static location for the views directory so that if the app is launched as a service 
+app.set("views", __dirname + "/views")
 //sets up no need for .ejs after filenames
 app.set("view engine", "ejs");
 //adds the middleware to all the routes without explicitly adding it. 
