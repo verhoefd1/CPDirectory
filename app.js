@@ -13,7 +13,7 @@ Tenant             	= require("./models/tenants"),
 seedDB              = require("./seeds"),
 request				= require("request"),
 // weather				= requre("./weather"),
-port                = 8080;
+port                = process.env.PORT;
 // var url = (DATABASEURL);
 console.log(process.env.DATABASEURL);
 
@@ -34,7 +34,7 @@ app.use(methodOverride("_method"));
 // mongoose.Promise = global.Promise;
 //connects to database
 // mongoose.connect(process.env.DATABASEURL);
-mongoose.connect("mongodb://dylan:3737tenants@ds153890.mlab.com:53890/directory");
+mongoose.connect(process.env.DATABASEURL);
 //sets up parsing to read req.body
 app.use(bodyParser.urlencoded({extended: true}));
 //sets up no need for .ejs after filenames
