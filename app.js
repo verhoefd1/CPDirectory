@@ -33,7 +33,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 // mongoose.Promise = global.Promise;
 //connects to database
-mongoose.connect(process.env.DATABASEURL);
+// mongoose.connect(process.env.DATABASEURL);
+mongoose.connect("mongodb://dylan:3737tenants@ds153890.mlab.com:53890/directory");
 //sets up parsing to read req.body
 app.use(bodyParser.urlencoded({extended: true}));
 //sets up no need for .ejs after filenames

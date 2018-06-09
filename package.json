@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "node": "8.10.0",
-    "npm" : "3.5.2"
+    "npm": "3.5.2"
   },
   "description": "A web application for static and interactive directories",
   "main": "app.js",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/verhoefd1/CPDirectory#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
     "express": "^4.16.2",
     "flash": "^1.1.0",
     "method-override": "^2.3.10",
