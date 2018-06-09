@@ -13,8 +13,9 @@ Tenant             	= require("./models/tenants"),
 seedDB              = require("./seeds"),
 request				= require("request"),
 // weather				= requre("./weather"),
-port                = 3000;
-
+port                = 8080;
+// var url = (DATABASEURL);
+console.log(process.env.DATABASEURL);
 
 //require routes
 //These are the routes under routes folder. This is so that we can separate our routes for each portion into separate files so that  app.js isn't humungous.
@@ -32,7 +33,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 // mongoose.Promise = global.Promise;
 //connects to database
-mongoose.connect("mongodb://localhost/directory");
+mongoose.connect(process.env.DATABASEURL);
 //sets up parsing to read req.body
 app.use(bodyParser.urlencoded({extended: true}));
 //sets up no need for .ejs after filenames
