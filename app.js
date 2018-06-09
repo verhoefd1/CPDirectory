@@ -12,6 +12,7 @@ seedDB              = require("./seeds"),
 request				= require("request"),
 port                = 8080;
 
+console.log(process.env.DATABASEURL);
 
 //These are the routes under routes folder. This is so that we can separate our routes for each portion into separate files so that  app.js isn't humungous.
 //for use with router
@@ -22,7 +23,8 @@ app.use(express.static(__dirname + "/public"));
 //Method over ride allows us to use server commands that don't work in the current http environmnet. 
 app.use(methodOverride("_method"));
 //connects to database
-mongoose.connect("mongodb://localhost/directory");
+mongoose.connect(process.env.DATABASEURL);
+//mongoose.connect("mongodb://localhost/directory");
 //sets up parsing to read req.body
 app.use(bodyParser.urlencoded({extended: true}));
 //sets up static location for the views directory so that if the app is launched as a service 
