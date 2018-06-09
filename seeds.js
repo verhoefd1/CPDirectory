@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 var Tenant = require("./models/tenants");
-var User = require("./models/users");
+// var User = require("./models/users");
 
 var data = [
     {
