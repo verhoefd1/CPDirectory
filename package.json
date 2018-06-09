@@ -1,9 +1,6 @@
 {
   "name": "cpdirectory",
   "version": "1.0.0",
-  "engines": {
-    "node": "8.8.0"
-  },
   "description": "A web application for static and interactive directories",
   "main": "app.js",
   "scripts": {
