@@ -137,7 +137,6 @@
 			<br>
 			<div class="row menuRow">
 				<h1 class="menuTitle">Valley Office Park</h1>
-				
 			</div>
 			<div class="row menuRow">
 				<% var wid = weather.weather[0].id%>
@@ -157,10 +156,16 @@
 				<%} else if(wid >= 701 && wid <= 781){%>
 				<i class="wi wi-dust"><p class="temp"><%=temp%>°</p></i>
 				<%}%>
+
+					<iframe class="time" src="http://free.timeanddate.com/clock/i68r2mbn/n76/fs32/fcfff/tct/pct/ftb/tt0/tw1/tm1/th2/ts1/tb4" frameborder="0" width="283" height="72" allowTransparency="true"></iframe>
 			</div>
 			<div class="row menuRow">
-				<iframe class="time" src="http://free.timeanddate.com/clock/i68r2mbn/n76/fs32/fcfff/tct/pct/ftb/tt0/tw1/tm1/th2/ts1/tb4" frameborder="0" width="283" height="72" allowTransparency="true"></iframe>
+				<a href="#" class="active menuButton">Tenants</a>
+				<a href="#" class="menuButton">Search</a>
+				<a href="#" class="menuButton">Building Info</a>
+				<a href="#" class="menuButton">Nearby Amenities</a>
 			</div>
+		
 		</div>
 	</div>
 </div>

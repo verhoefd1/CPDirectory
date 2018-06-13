@@ -55,6 +55,11 @@ body {
 .menuRow {
     text-align: center;
     align-content: center;
+    border-bottom: solid rgb(37, 64, 143) 3px;
+}
+.menuRow:last-child{
+    border-bottom: none;
+    padding-top: 35px;
 }
 
 .menuTitle {
@@ -71,8 +76,29 @@ body {
 	margin-top: 2%;
 	margin-bottom: 2%;
 }
-
+/*dynamic*/
 i {
+    font-size: 100px;
+    color: White;
+    /*margin: 50px 10%;*/
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+}
+
+i p {
+    font-size: .35em;
+    margin-top: 20px;
+}
+.time {
+    position: absolute;
+    left: 175px;
+    bottom: 465px;
+}
+
+/*static*/
+/*i {
     font-size: 225px;
     color: White;
     margin: 100px auto;
@@ -86,6 +112,29 @@ i p {
     position: absolute;
     left: 100px;
     bottom: 30px;
+}
+*/
+
+.menuButton {
+    background-color: rgb(37, 64, 143);
+    width: 75%;
+    height: 50px;
+    margin: 15px auto;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 30px;
+    box-shadow: 5px 5px rgba(5,5,5,.5);
+}
+.active{
+    background-color: rgb(214, 113, 42);
+}
+
+.buttonText {
+    color: white;
+    margin: auto;
 }
 
 
