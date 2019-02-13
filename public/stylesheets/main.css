@@ -26,13 +26,13 @@ body {
 
 .tenant{
     font-family: Arial, Helvetica;
-    font-size: 1.25em;
+    font-size: 1.23em;
     margin-bottom: 10px;
 }
 
 .subname{
     font-family: Arial, Helvetica;
-    font-size: 1.0em;
+    font-size: .98em;
     text-indent: 25px;
 }
 
