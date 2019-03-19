@@ -20,19 +20,19 @@ body {
 }
 
 .letter {
-    margin-top: 25px;
+    margin-top: 23px;
     color: rgb(17,30,108);
 }
 
 .tenant{
     font-family: Arial, Helvetica;
-    font-size: 1.23em;
+    font-size: 1.17em;
     margin-bottom: 10px;
 }
 
 .subname{
     font-family: Arial, Helvetica;
-    font-size: .98em;
+    font-size: .93em;
     text-indent: 25px;
 }
 
