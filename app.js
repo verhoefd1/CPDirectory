@@ -10,7 +10,7 @@ Tenant             	= require("./models/tenants"),
 // User                = require("./models/users"),
 seedDB              = require("./seeds"),
 request				= require("request"),
-port                = 8080;
+port                = 30495;
 
 
 //These are the routes under routes folder. This is so that we can separate our routes for each portion into separate files so that  app.js isn't humungous.
